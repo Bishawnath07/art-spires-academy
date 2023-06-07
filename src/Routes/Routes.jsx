@@ -4,6 +4,9 @@ import SignUp from "../SignUp/SignUp";
 import Login from "../Login/Login";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
+import Instructors from "../Pages/Instructors/Instructors";
+import Classes from "../Pages/Classes/Classes";
+import DashBoard from "../Layout/DashBoard";
 
 const router = createBrowserRouter([
     {
@@ -16,6 +19,14 @@ const router = createBrowserRouter([
             element: <Home></Home>
         },
         {
+            path: '/instructors' ,
+            element: <Instructors></Instructors>
+        },
+        {
+            path: '/classes' ,
+            element: <Classes></Classes>
+        },
+        {
             path: '/login' ,
             element: <Login></Login>
         },
@@ -25,6 +36,10 @@ const router = createBrowserRouter([
         } ,
       ]
     },
+    {
+      path: 'dashboard' ,
+      element: <DashBoard></DashBoard>
+    }
   ]);
 
   export default router;

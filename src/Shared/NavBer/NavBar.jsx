@@ -14,14 +14,14 @@ const NavBar = () => {
     
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/">Instructors</Link></li>
-        <li><Link to="/">Classes</Link></li>
+        <li><Link to="/instructors">Instructors</Link></li>
+        <li><Link to="/classes">Classes</Link></li>
         <li><Link to="/">Teacher</Link></li>
         
 
         {
             user ? <>
-            <li><Link to="/">Dashboard</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
                 <li onClick={handleLogOut}><Link >LogOut</Link></li>
                 
             </> : <>
@@ -50,6 +50,11 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    {
+                        user?.email && <div className="tooltip  tooltip-left flex justify-between items-center ml-16 " data-tip={user && user.displayName}>
+                        <img className='rounded-xl h-10 w-10 mr-3' src={user.photoURL} alt="" />
+                       </div>
+                    }
                     <a className="btn">Join Class</a>
                 </div>
             </div>

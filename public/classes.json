@@ -1,0 +1,98 @@
+[
+    {
+     
+      "Name": "Introduction to Photography",
+      "Image": "https://i.ibb.co/c15Qjmw/istockphoto-481776724-640x640.jpg",
+      "Instructor": "John Smith",
+      "Seats": 15,
+      "Price": "$200"
+    },
+    {
+      
+      "Name": "Advanced Photo Editing",
+      "Image": "https://i.ibb.co/Qf9TPnK/istockphoto-533932920-640x640.jpg",
+      "Instructor": "Emily Johnson",
+      "Seats": 10,
+      "Price": "$250"
+    },
+    {
+     
+      "Name": "Portrait Photography",
+      "Image": "https://i.ibb.co/wW50y2p/istockphoto-644928968-640x640.jpg",
+      "Instructor": "Michael Davis",
+      "Seats": 12,
+      "Price": "$180"
+    },
+    {
+     
+      "Name": "Oil Painting Basics",
+      "Image": "https://i.ibb.co/fXw3054/istockphoto-680336482-640x640.jpg",
+      "Instructor": "Sarah Thompson",
+      "Seats": 8,
+      "Price": "$150"
+    },
+    {
+     
+      "Name": "Sculpture Workshop",
+      "Image": "https://i.ibb.co/pWM1QGL/istockphoto-680336488-640x640.jpg",
+      "Instructor": "David Wilson",
+      "Seats": 10,
+      "Price": "$220"
+    },
+    {
+
+      "Name": "Watercolor Landscape Painting",
+      "Image": "https://i.ibb.co/GHCGZQ5/istockphoto-681873254-640x640.jpg",
+      "Instructor": "Olivia Roberts",
+      "Seats": 12,
+      "Price": "$180"
+    },
+    {
+      
+      "Name": "Introduction to Pottery",
+      "Image": "https://i.ibb.co/S34MZ4b/istockphoto-683823710-640x640.jpg",
+      "Instructor": "Mark Anderson",
+      "Seats": 15,
+      "Price": "$190"
+    },
+    {
+    
+      "Name": "Jewelry Making Workshop",
+      "Image": "https://i.ibb.co/yNJtWzH/istockphoto-683827510-640x640.jpg",
+      "Instructor": "Amy Wilson",
+      "Seats": 10,
+      "Price": "$210"
+    },
+    {
+     
+      "Name": "Digital Illustration Masterclass",
+      "Image": "https://i.ibb.co/s5jWB1p/istockphoto-857553056-640x640.jpg",
+      "Instructor": "Matthew Davis",
+      "Seats": 8,
+      "Price": "$250"
+    },
+    {
+ 
+      "Name": "Paper Crafts for Beginners",
+      "Image": "https://i.ibb.co/SRH6y9V/istockphoto-857563016-640x640.jpg",
+      "Instructor": "Julia Smith",
+      "Seats": 13,
+      "Price": "$120"
+    },
+    {
+
+      "Name": "Paper Crafts for Beginners",
+      "Image": "https://i.ibb.co/myJK3cN/istockphoto-942445242-640x640.jpg",
+      "Instructor": "Jhon Doe",
+      "Seats": 25,
+      "Price": "$130"
+    },
+    {
+     
+      "Name": "Paper Crafts ",
+      "Image": "https://i.ibb.co/c15Qjmw/istockphoto-481776724-640x640.jpg",
+      "Instructor": " Donald John",
+      "Seats": 20,
+      "Price": "$100"
+    }
+  ]
