@@ -21,7 +21,9 @@ const DashBoard = () => {
                             <>
                                 <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
 
-                                <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
+                                <li><NavLink to="/dashboard/manageclasse"><FaUsers></FaUsers> Manage Classe</NavLink></li>
+                                <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> Manage Users </NavLink></li>
+                                <li><NavLink to="/dashboard/manageinstructor"><FaUsers></FaUsers> Make Instructor</NavLink></li>
 
                                 <div className="divider"></div>
                                 <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
