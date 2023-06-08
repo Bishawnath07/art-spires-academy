@@ -47,7 +47,7 @@ const DashBoard = () => {
                     ) || isInstructor &&
                         <>
                             <li>
-                                <NavLink to="/dashboard/instructorhome">
+                                <NavLink to="/dashboard/addclass">
                                     <FaHome></FaHome>Add a Class
                                 </NavLink>
                             </li>
@@ -58,8 +58,13 @@ const DashBoard = () => {
                             </li>
                            
                             <li>
-                                <NavLink to="/dashboard/manageinstructor">
+                                <NavLink to="/dashboard/">
                                     <FaUsers></FaUsers> Feedback
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/">
+                                <FaHome></FaHome> Back Home
                                 </NavLink>
                             </li>
                         </>

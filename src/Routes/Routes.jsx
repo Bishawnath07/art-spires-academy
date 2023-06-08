@@ -9,9 +9,9 @@ import Classes from "../Pages/Classes/Classes";
 import DashBoard from "../Layout/DashBoard";
 import AllUser from "../Pages/DashBoard/AllUser/AllUser";
 import AdminRoute from "./AdminRoute";
-import MakeInstructor from "../Pages/DashBoard/MakeInstructor/MakeInstructor";
-import InstructorHome from "../Pages/DashBoard/Instructor/InstructorHome/InstructorHome";
-import StudentHome from "../Layout/StudentHome/StudentHome";
+import PrivateRoute from "./PrivetRoute";
+import AddClass from "../Pages/DashBoard/InstructorDashboard/AddClass";
+
 
 const router = createBrowserRouter([
     {
@@ -43,24 +43,19 @@ const router = createBrowserRouter([
     },
     {
       path: 'dashboard' ,
-      element: <DashBoard></DashBoard>,
+      element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute> ,
       children: [
+        // admin relatate route
         {
           path: 'allusers' ,
           element:<AdminRoute><AllUser></AllUser></AdminRoute>
         },
+        //  instructor relatate route
         {
-          path: 'manageinstructor' ,
-          element: <MakeInstructor></MakeInstructor>
-        },
-        {
-          path: 'instructorhome' ,
-          element: <InstructorHome></InstructorHome>
-        },
-        {
-          path: 'home' ,
-          element: <StudentHome></StudentHome>
+          path: 'addclass' ,
+          element: <AddClass></AddClass>
         }
+        
       ]
     }
   ]);
