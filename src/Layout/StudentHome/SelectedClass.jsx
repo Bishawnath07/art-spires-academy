@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const SelectedClass = () => {
     const [classes, setClasses] = useState([])
+    const total = classes.reduce((sum, item) => item.price + sum, 0);
     useEffect(() => {
         fetch('http://localhost:5000/selectclass')
             .then(res => res.json())
@@ -28,7 +30,7 @@ const SelectedClass = () => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount > 0) {
-                          
+
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',
@@ -44,6 +46,11 @@ const SelectedClass = () => {
 
     return (
         <div className="overflow-x-auto">
+            <div className="flex items-center justify-between mb-3">
+                <h2 className="text-2xl font-bold text-sky-800 ">You Added {classes.length} classes.</h2>
+                <p className="text-md font-bold text-sky-800">Total: ${ total}</p>
+                <Link to='/dashboard/payment'><button className="btn btn-primary btn-xs">PAY</button></Link>
+            </div>
             <table className="table">
                 {/* head */}
                 <thead>
