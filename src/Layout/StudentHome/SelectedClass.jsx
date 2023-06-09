@@ -10,7 +10,7 @@ const SelectedClass = () => {
     const {user} = useContext(AuthContext)
     
     const total = classes.reduce((sum, item) => item.price + sum, 0);
-    const url = `http://localhost:5000/succefulpay?email=${user.email}`
+    const url = `http://localhost:5000/selectstudent?email=${user.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
