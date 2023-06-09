@@ -11,6 +11,9 @@ import AllUser from "../Pages/DashBoard/AllUser/AllUser";
 import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivetRoute";
 import AddClass from "../Pages/DashBoard/InstructorDashboard/AddClass";
+import ManageClass from "../Pages/DashBoard/AdminDashboard/ManageClass";
+import EnrollClass from "../Pages/DashBoard/StudentDashboard/EnrollClass";
+import SelectedClass from "../Layout/StudentHome/SelectedClass";
 
 
 const router = createBrowserRouter([
@@ -50,10 +53,24 @@ const router = createBrowserRouter([
           path: 'allusers' ,
           element:<AdminRoute><AllUser></AllUser></AdminRoute>
         },
+        {
+          path: 'manageclass' ,
+          element: <ManageClass></ManageClass>
+        } ,
         //  instructor relatate route
         {
           path: 'addclass' ,
           element: <AddClass></AddClass>
+        },
+
+        // student relatate route
+        {
+          path: 'enrollclass' ,
+          element: <EnrollClass></EnrollClass>
+        } ,
+        {
+          path: 'selectclass' ,
+          element: <SelectedClass></SelectedClass>
         }
         
       ]

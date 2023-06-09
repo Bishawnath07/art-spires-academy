@@ -1,13 +1,32 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import SectionTitle from "../../../Components/SectionTitle";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 
 const img_hosting_token = import.meta.env.VITE_IMGBB_TOKEN;
 
 const AddClass = () => {
+    const { register, handleSubmit, reset ,setValue } = useForm();
+   
+    const {user } = useContext(AuthContext)
+
+    useEffect(() => {
+        const getUserInfo = async () => {
+          if (user) {
+            const { displayName } = user;
+            setValue('instructor', displayName);
+            setValue('email', user.email);
+          }
+        };
+    
+        getUserInfo();
+      }, [setValue , user]);
+
+
     const [axiosSecure] =useAxiosSecure()
-    const { register, handleSubmit, reset } = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
 
     const onSubmit = data => {
@@ -48,7 +67,10 @@ const AddClass = () => {
     
     return (
         <div className="w-full px-10">
-           
+            <SectionTitle
+                subHeading={"ADD A CLASSES"}
+                heading={"You Can Add Classes"}
+            ></SectionTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full mb-4">
                     <label className="label">
@@ -69,13 +91,13 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text">Instructor Name*</span>
                         </label>
-                        <input type="text" {...register("instructor", { required: true })} placeholder="Type Instructor name" className="input input-bordered w-full " />
+                        <input type="text" {...register("instructor", { required: true })} placeholder="Type Instructor name" className="input input-bordered w-full " readOnly />
                     </div>
                     <div className="form-control w-full ml-4">
                         <label className="label">
                             <span className="label-text font-semibold">Instructor Email*</span>
                         </label>
-                        <input type="email" {...register("email", { required: true })} placeholder="Type Instructor email" className="input input-bordered w-full " />
+                        <input type="email" {...register("email", { required: true })} placeholder="Type Instructor email" className="input input-bordered w-full " readOnly />
                     </div>
                 </div>
                 <div className="flex my-4">
