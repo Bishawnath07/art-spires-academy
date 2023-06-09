@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const SelectedClass = () => {
     const [classes, setClasses] = useState([])
+    const {user} = useContext(AuthContext)
+    
     const total = classes.reduce((sum, item) => item.price + sum, 0);
+    const url = `http://localhost:5000/succefulpay?email=${user.email}`
     useEffect(() => {
-        fetch('http://localhost:5000/selectclass')
+        fetch(url)
             .then(res => res.json())
             .then(data => setClasses(data))
     }, []);

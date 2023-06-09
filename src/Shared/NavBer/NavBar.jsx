@@ -24,7 +24,7 @@ const NavBar = () => {
 
         {
             user ? <>
-            <li><Link to={isAdmin ? "/dashboard/adminhome" : isInstructor ? "/dashboard" : "/dashboard/selectclass"}>Dashboard</Link></li>
+            <li><Link to={isAdmin ? "/dashboard/allusers" : isInstructor ? "/dashboard" : "/dashboard/selectclass"}>Dashboard</Link></li>
                 <li onClick={handleLogOut}><Link >LogOut</Link></li>
                 
             </> : <>
