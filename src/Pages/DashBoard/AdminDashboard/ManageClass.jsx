@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
+import ManageClassCard from "./ManageClassCard";
 
 
 const ManageClass = () => {
   const [classes, setClasses] = useState([])
   useEffect(() => {
-    fetch('http://localhost:5000/instructors')
+    fetch('http://localhost:5000/classes')
       .then(res => res.json())
       .then(data => setClasses(data))
   }, []);
+
   return (
     <div className="overflow-x-auto">
       <table className="table">
@@ -21,37 +23,17 @@ const ManageClass = () => {
             <th>Instructor email</th>
             <th>Available seats</th>
             <th>Price</th>
-            <th className="text-center">Status</th>
+            <th>Stutas</th>
+            <th className="text-center">Action</th>
           </tr>
         </thead>
         <tbody>
           {
             classes.map((item) => 
-              <tr key={item._id}>
-
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img src={item.image} alt="Avatar Tailwind CSS Component" />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  {item.name}
-
-                </td>
-                <td>{item.instructor}</td>
-                <td>{item.email}</td>
-                <td>{item.seats}</td>
-                <td>{item.price}</td>
-                <th className="space-x-2">
-                  <button className="btn btn-primary btn-xs">pending</button>
-                  <button className="btn btn-warning btn-xs">approved</button>
-                  <button className="btn btn-xs">denied</button>
-                </th>
-              </tr>
+              <ManageClassCard
+              key={item._id}
+              item={item}
+              ></ManageClassCard>
             )
           }
         </tbody>

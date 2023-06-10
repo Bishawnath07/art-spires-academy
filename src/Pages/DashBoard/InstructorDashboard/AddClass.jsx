@@ -9,24 +9,24 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const img_hosting_token = import.meta.env.VITE_IMGBB_TOKEN;
 
 const AddClass = () => {
-    const { register, handleSubmit, reset ,setValue } = useForm();
-   
-    const {user } = useContext(AuthContext)
+    const { register, handleSubmit, reset, setValue } = useForm();
+
+    const { user } = useContext(AuthContext)
 
     useEffect(() => {
         const getUserInfo = async () => {
-          if (user) {
-            const { displayName } = user;
-            setValue('instructor', displayName);
-            setValue('email', user.email);
-          }
+            if (user) {
+                const { displayName } = user;
+                setValue('instructor', displayName);
+                setValue('email', user.email);
+            }
         };
-    
+
         getUserInfo();
-      }, [setValue , user]);
+    }, [setValue, user]);
 
 
-    const [axiosSecure] =useAxiosSecure()
+    const [axiosSecure] = useAxiosSecure()
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
 
     const onSubmit = data => {
@@ -38,33 +38,33 @@ const AddClass = () => {
             method: 'POST',
             body: formData
         })
-        .then(res => res.json())
-        .then(imgResponse => {
-            if(imgResponse.success){
-                const imgURL = imgResponse.data.display_url;
-                const {name , email , instructor  , seats , price} = data;
-                const newItem = {name, email , price: parseFloat(price), instructor , seats, image:imgURL}
-                console.log(newItem)
-                axiosSecure.post('/classes', newItem)
-                .then(data => {
-                    console.log('after posting new menu item', data.data)
-                    if(data.data.insertedId){
-                        reset();
-                        Swal.fire({
-                            position: 'top-center',
-                            icon: 'success',
-                            title: 'Item added successfully',
-                            showConfirmButton: false,
-                            timer: 1500
-                          })
-                    }
-                })
-            }
-        })
+            .then(res => res.json())
+            .then(imgResponse => {
+                if (imgResponse.success) {
+                    const imgURL = imgResponse.data.display_url;
+                    const { name, email, instructor, seats, price ,enrolled} = data;
+                    const newItem = { name, email, enrolled , status: 'pending'  , price: parseFloat(price), instructor, seats, image: imgURL }
+                    console.log(newItem)
+                    axiosSecure.post('/classes', newItem)
+                        .then(data => {
+                            console.log('after posting new menu item', data.data)
+                            if (data.data.insertedId) {
+                                reset();
+                                Swal.fire({
+                                    position: 'top-center',
+                                    icon: 'success',
+                                    title: 'Item added successfully',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        })
+                }
+            })
 
     };
-    
-    
+
+
     return (
         <div className="w-full px-10">
             <SectionTitle
@@ -72,20 +72,25 @@ const AddClass = () => {
                 heading={"You Can Add Classes"}
             ></SectionTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-control w-full mb-4">
-                    <label className="label">
-                        <span className="label-text font-semibold">Class Name*</span>
-                    </label>
-                    <input type="text" placeholder="Class Name"
-                        {...register("name", { required: true, maxLength: 120 })}
-                        className="input input-bordered w-full " />
+                <div className="flex my-4 gap-4">
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text font-semibold">Class Name*</span>
+                        </label>
+                        <input type="text" placeholder="Class Name"
+                            {...register("name", { required: true, maxLength: 120 })}
+                            className="input input-bordered w-full " />
+                    </div>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text font-semibold">Student Enrolled*</span>
+                        </label>
+                        <input type="text" placeholder="00"  
+                            {...register("enrolled", { maxLength: 120 })}
+                            className="input input-bordered w-full " />
+                    </div>
                 </div>
-                <div className="form-control w-full my-4">
-                    <label className="label">
-                        <span className="label-text">Class Image*</span>
-                    </label>
-                    <input type="file" {...register("image", { required: true })} className="file-input file-input-bordered w-full " />
-                </div>
+
                 <div className="flex my-4">
                     <div className="form-control w-full ">
                         <label className="label">
@@ -114,8 +119,14 @@ const AddClass = () => {
                         <input type="number" {...register("price", { required: true })} placeholder="Price" className="input input-bordered w-full " />
                     </div>
                 </div>
-               
-                
+                <div className="form-control w-full my-4">
+                    <label className="label">
+                        <span className="label-text">Class Image*</span>
+                    </label>
+                    <input type="file" {...register("image", { required: true })} className="file-input file-input-bordered w-full " />
+                </div>
+
+
                 <input className="btn btn-sm mt-4" type="submit" value="Add Item" />
             </form>
         </div>

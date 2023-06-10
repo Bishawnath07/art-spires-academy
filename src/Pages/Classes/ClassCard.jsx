@@ -7,15 +7,19 @@ import Swal from "sweetalert2";
 
 const ClassCard = ({item}) => {
     const {user} = useContext(AuthContext)
-    const {_id, image , name , instructor  ,  seats , price} =item;
+
+    const {_id, image , name , instructor  ,enrolled ,  seats , price} =item;
     const [, refetch] = useClasses();
     const navigate = useNavigate();
     const location = useLocation();
+
+
     const handleAddToCart = item => {
         console.log(item);
         if(user && user.email){
             const cartItem = {menuItemId: _id, name, image, price, instructor , seats , email: user.email}
-            fetch('http://localhost:5000/classes', {
+            console.log('console to 21 ' , cartItem)
+            fetch('http://localhost:5000/selectclasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -38,7 +42,7 @@ const ClassCard = ({item}) => {
         }
         else{
             Swal.fire({
-                title: 'Please login to order the food',
+                title: 'Please login ',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -59,16 +63,19 @@ const ClassCard = ({item}) => {
                 {name} Class
             </h2>
             <p className="font-semibold">Teacher :  {instructor}</p>
-            <div className="card-actions justify-start">
-                <button className="badge badge-outline">Available Seats: {seats}</button>
+            <div className="card-actions gap-5 justify-start">
+                <button className="badge badge-outline"> Seats: {seats}</button>
+                <button className="badge badge-outline"> Enrolled : {enrolled} </button>
                 <button className="badge badge-outline">Pice: {price}</button>
-                {
-                    user ?  <button  onClick={() => handleAddToCart(item)} className="badge badge-outline ml-8 btn-outline btn-primary">Select</button> : <button className="badge badge-outline ml-20 disabled">Select</button>
-                }
+                
             </div>
+          
+            <button onClick={() => handleAddToCart(item)} className="btn btn-primary btn-outline btn-sm mt-4">Enroll Now</button>
+           
         </div>
     </div>
     );
 };
 
 export default ClassCard;
+ 

@@ -12,7 +12,7 @@ const SelectedRow = ({item , index , handleDelete}) => {
         <td>{price}</td>
         <td><Link to={`/dashboard/payment/${_id}`}><button className="btn btn-primary btn-xs">pay</button></Link></td>
         <td>
-            <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
+            <button onClick={() => handleDelete(item)}  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
         </td>
     </tr>
     );

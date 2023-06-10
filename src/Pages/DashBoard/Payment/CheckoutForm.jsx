@@ -85,7 +85,7 @@ const CheckoutForm = ({ cart, price }) => {
                 price,
                 date: new Date(),
                 quantity: cart.length,
-                
+                name : cart.name,
                 status: 'service pending',   
             }
             console.log('console log price ' ,payment)
@@ -105,6 +105,7 @@ const CheckoutForm = ({ cart, price }) => {
                         });
                     }
                 })
+                
         }
 
 

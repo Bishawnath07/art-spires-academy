@@ -8,7 +8,7 @@ const Instructors = () => {
     useEffect( () =>{
         fetch('http://localhost:5000/classes')
         .then(res => res.json())
-        .then(data => setInstructors(data))
+        .then(data => console.log(data))
     }, []);
     return (
         <>

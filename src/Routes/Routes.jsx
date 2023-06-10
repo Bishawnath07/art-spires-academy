@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'manageclass' ,
-          element: <ManageClass></ManageClass>
+          element: <AdminRoute><ManageClass></ManageClass></AdminRoute>
         } ,
         //  instructor relatate route
         {
