@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 import { AuthContext } from "../../Provider/AuthProvider";
+import SelectedRow from "./SelectedRow";
 
 
 const SelectedClass = () => {
@@ -53,7 +53,7 @@ const SelectedClass = () => {
             <div className="flex items-center justify-between mb-3">
                 <h2 className="text-2xl font-bold text-sky-800 ">You Added {classes.length} classes.</h2>
                 <p className="text-md font-bold text-sky-800">Total: ${ total}</p>
-                <Link to='/dashboard/payment'><button className="btn btn-primary btn-xs">PAY</button></Link>
+                
             </div>
             <table className="table">
                 {/* head */}
@@ -69,16 +69,12 @@ const SelectedClass = () => {
                 </thead>
                 <tbody>
                     {
-                        classes.map((item, index) => <tr key={item._id}>
-                            <th>{index + 1}</th>
-                            <td>{item.instructor}</td>
-                            <td>{item.email}</td>
-                            <td>{item.name}</td>
-                            <td>{item.price}</td>
-                            <td>
-                                <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
-                            </td>
-                        </tr>)
+                        classes.map((item, index) => <SelectedRow
+                        key={item._id}
+                        index={index}
+                        item={item}
+                        handleDelete={handleDelete}
+                        ></SelectedRow>)
                     }
                 </tbody>
             </table>

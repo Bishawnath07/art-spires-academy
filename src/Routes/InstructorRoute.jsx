@@ -4,7 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import useInstructor from "../Hooks/useInstructor";
 
 
-const AdminRoute = ({ children }) => {
+const InstructorRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const [isInstructor , isInstructorLoading] = useInstructor();
     const location = useLocation();
@@ -19,4 +19,4 @@ const AdminRoute = ({ children }) => {
     return <Navigate to="/" state={{from: location}} replace></Navigate>
 };
 
-export default AdminRoute;
+export default InstructorRoute;

@@ -8,7 +8,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 
 const CheckoutForm = ({ cart, price }) => {
-    console.log(cart)
+    console.log(price)
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -22,7 +22,7 @@ const CheckoutForm = ({ cart, price }) => {
         if (price > 0) {
             axiosSecure.post('/create-payment-intent', { price })
                 .then(res => {
-                    console.log(res.data.clientSecret)
+                    console.log('console to line 25' , res.data.clientSecret)
                     setClientSecret(res.data.clientSecret);
                 })
         }
@@ -85,17 +85,15 @@ const CheckoutForm = ({ cart, price }) => {
                 price,
                 date: new Date(),
                 quantity: cart.length,
-                selectItems: cart.map(item => item._id),
-                classItems: cart.map(item => item.menuItemId),
-                status: 'service pending',
                 
-                
+                status: 'service pending',   
             }
+            console.log('console log price ' ,payment)
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.insertResult.insertedId) {
-                        // display confirm
+                     
                         Swal.fire({
                             title: 'Your Payment has been Successful.',
                             showClass: {

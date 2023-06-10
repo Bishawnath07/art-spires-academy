@@ -1,10 +1,11 @@
-import Banner from "./Banner/Banner";
+import CarouselComponent from "./Banner/CarouselComponent";
 import PopularClass from "./PopularClass/PopularClass";
 
 const Home = () => {
     return (
         <div className="max-w-screen-xl">
-            <Banner></Banner>
+            
+            <CarouselComponent></CarouselComponent>
             <PopularClass></PopularClass>
         </div>
     );

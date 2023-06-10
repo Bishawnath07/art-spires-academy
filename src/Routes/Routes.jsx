@@ -15,6 +15,9 @@ import ManageClass from "../Pages/DashBoard/AdminDashboard/ManageClass";
 import EnrollClass from "../Pages/DashBoard/StudentDashboard/EnrollClass";
 import SelectedClass from "../Layout/StudentHome/SelectedClass";
 import Payment from "../Pages/DashBoard/Payment/Payment";
+import InstructorRoute from "./InstructorRoute";
+
+
 
 
 const router = createBrowserRouter([
@@ -61,7 +64,7 @@ const router = createBrowserRouter([
         //  instructor relatate route
         {
           path: 'addclass' ,
-          element: <AddClass></AddClass>
+          element: <InstructorRoute> <AddClass></AddClass></InstructorRoute>
         },
 
         // student relatate route
@@ -71,11 +74,13 @@ const router = createBrowserRouter([
         } ,
         {
           path: 'selectclass' ,
-          element: <SelectedClass></SelectedClass>
+          element: <SelectedClass></SelectedClass> ,
+          
         },
         {
-          path: 'payment' ,
-          element: <Payment></Payment>
+          path: '/dashboard/payment/:id' ,
+          element: <Payment></Payment> ,
+          loader: ({params}) => fetch(`http://localhost:5000/selectclass/${params.id}`)
         }
         
       ]
