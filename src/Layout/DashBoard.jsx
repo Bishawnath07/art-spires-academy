@@ -1,7 +1,8 @@
-import {  FaCog, FaHome, FaUser, FaUsers } from "react-icons/fa";
+import {  FaBookmark,  FaHome, FaRegBookmark,  FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
+import NavBar from "../Shared/NavBer/NavBar";
 
 
 const DashBoard = () => {
@@ -9,6 +10,8 @@ const DashBoard = () => {
     const [isInstructor]= useInstructor();
 
     return (
+        <>
+        <NavBar></NavBar>
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
@@ -16,9 +19,9 @@ const DashBoard = () => {
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                 <Outlet></Outlet>
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side bg-[#D1A054]">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 ">
                     {/* Sidebar content here */}
                     {isAdmin && (
                         <>
@@ -58,7 +61,7 @@ const DashBoard = () => {
                             </li>
                            
                             <li>
-                                <NavLink to="/dashboard/">
+                                <NavLink to="/dashboard/getfeedback">
                                     <FaUsers></FaUsers> Feedback
                                 </NavLink>
                             </li>
@@ -72,25 +75,21 @@ const DashBoard = () => {
                         // Default case when neither isAdmin nor isInstructor is true
                         <>
                             <li>
-                                <NavLink to="/dashboard/home">
+                                <NavLink to="/">
                                     <FaHome></FaHome> Home
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/selectclass">
-                                    <FaUser></FaUser> My Selected Classes
+                                    <FaRegBookmark></FaRegBookmark> My Selected Classes
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/enrollclass">
-                                    <FaCog></FaCog> My Enrolled Classes
+                                    <FaBookmark></FaBookmark> My Enrolled Classes
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/">
-                                <FaHome></FaHome>Back Home
-                                </NavLink>
-                            </li>
+                           
                         </>
                     }
 
@@ -98,6 +97,7 @@ const DashBoard = () => {
 
             </div>
         </div>
+        </>
     );
 };
 

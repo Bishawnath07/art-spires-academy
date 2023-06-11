@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const ManageClassCard = ({ item }) => {
-    const { name, image, price , instructor , seats , enrolled} = item;
+    const { _id , name, image, price , instructor , seats , enrolled} = item;
     const { user } = useContext(AuthContext)
     const [isButtonDisabled, setIsButtonDisabled] = useState(false)
 
@@ -103,7 +103,7 @@ const ManageClassCard = ({ item }) => {
             <th className="space-y-2 flex flex-col">
                 <button onClick={() => approveClass(item)} className="btn btn-primary btn-xs" disabled={isButtonDisabled}>approved</button>
                 <button onClick={() => deniedClass(item)} className="btn btn-warning btn-xs" disabled={isButtonDisabled}>denied</button>
-                <Link to='/dashboard/feedback'> <button className="btn btn-accent btn-xs">feedback</button></Link>
+                <Link to={`/dashboard/feedback/${_id}`}> <button className="btn btn-accent btn-xs">feedback</button></Link>
             </th>
         </tr>
     );

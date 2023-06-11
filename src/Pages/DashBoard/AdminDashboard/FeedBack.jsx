@@ -1,17 +1,21 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { useLoaderData } from "react-router-dom";
 
 
 const FeedBack = () => {
-
+    const item =useLoaderData();
+    const {name , price , status , email ,instructor , image} =item;
     const {user} =useContext(AuthContext)
     const handleSubmit = (event) => {
         event.preventDefault();
         const feedback = event.target.text.value;
-
+        
         if (user && user.email) {
-            const cartItem = { feedback }
+            const cartItem = { feedback ,name , price , status , email ,instructor , image }
+            console.log(cartItem)
+            
             fetch('http://localhost:5000/feedback', {
                 method: 'POST',
                 headers: {

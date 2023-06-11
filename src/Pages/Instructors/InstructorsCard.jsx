@@ -5,7 +5,7 @@ const InstructorsCard = ({instructorDetails}) => {
     const {role , name ,photo , email } = instructorDetails;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-          <figure><img className="rounded-md" src={photo} alt="Shoes" /></figure>
+          <figure><img className="rounded-md h-[350px] w-[350px]" src={photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                  {name}
