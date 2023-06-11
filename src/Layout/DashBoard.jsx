@@ -52,7 +52,7 @@ const DashBoard = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/manageclasse">
+                                <NavLink to="/dashboard/myclass">
                                     <FaUsers></FaUsers> My Classe
                                 </NavLink>
                             </li>

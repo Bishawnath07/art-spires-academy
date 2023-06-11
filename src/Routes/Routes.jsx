@@ -16,6 +16,8 @@ import EnrollClass from "../Pages/DashBoard/StudentDashboard/EnrollClass";
 import SelectedClass from "../Layout/StudentHome/SelectedClass";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import InstructorRoute from "./InstructorRoute";
+import MyClass from "../Pages/DashBoard/InstructorDashboard/MyClass";
+import FeedBack from "../Pages/DashBoard/AdminDashboard/FeedBack";
 
 
 
@@ -61,10 +63,18 @@ const router = createBrowserRouter([
           path: 'manageclass' ,
           element: <AdminRoute><ManageClass></ManageClass></AdminRoute>
         } ,
+        {
+          path: 'feedback' ,
+          element: <FeedBack></FeedBack>
+        },
         //  instructor relatate route
         {
           path: 'addclass' ,
           element: <InstructorRoute> <AddClass></AddClass></InstructorRoute>
+        },
+        {
+          path: 'myclass' ,
+          element: <MyClass></MyClass>
         },
 
         // student relatate route

@@ -83,6 +83,8 @@ const CheckoutForm = ({ cart, price }) => {
                 email: user?.email,
                 transactionId: paymentIntent.id,
                 price,
+                cart,
+                item:cart._id, 
                 date: new Date(),
                 quantity: cart.length,
                 name : cart.name,

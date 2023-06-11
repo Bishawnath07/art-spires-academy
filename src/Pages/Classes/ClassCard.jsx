@@ -77,7 +77,7 @@ const ClassCard = ({ item }) => {
                     <p className="font-semibold">Teacher :  {instructor}</p>
                     <div className="card-actions gap-5 justify-start">
                         <button className="badge badge-outline"> Seats: {seats}</button>
-                        <button className="badge badge-outline"> Enrolled: {enrollmentCount} </button>
+                        <button className="badge badge-outline"> Enrolled: {enrollmentCount + 1} </button>
                         <button className="badge badge-outline">Pice: {price}</button>
 
                     </div>
