@@ -34,7 +34,7 @@ const ManageClassCard = ({ item }) => {
                         Swal.fire({
                             position: 'top-center',
                             icon: 'success',
-                            title: 'Food added on the cart.',
+                            title: ' Added Class on the Class Page.',
                             showConfirmButton: false,
                             timer: 1500
                         })

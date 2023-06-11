@@ -24,7 +24,7 @@ const EnrollClass = () => {
                             <th>#</th>
                             <th>EMAIL</th>
                             <th>TOTAL PRICE</th>
-                            <th> QUANTITY</th>
+                           
                             <th>PAYENT DATE</th>
                         </tr>
                     </thead>
@@ -34,7 +34,7 @@ const EnrollClass = () => {
                             <th>{index + 1}</th>
                             <td>{item.email}</td>
                             <td>{item.price}</td>
-                            <td>{item.quantity}</td>
+                            
                             <td>{item.date} </td>
                           </tr>)
                         }

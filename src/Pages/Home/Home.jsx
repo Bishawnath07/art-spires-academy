@@ -1,3 +1,4 @@
+import AttractiveSection from "./AttractiveSection/AttractiveSection";
 import CarouselComponent from "./Banner/CarouselComponent";
 import PopularClass from "./PopularClass/PopularClass";
 
@@ -7,6 +8,7 @@ const Home = () => {
             
             <CarouselComponent></CarouselComponent>
             <PopularClass></PopularClass>
+            <AttractiveSection></AttractiveSection>
         </div>
     );
 };

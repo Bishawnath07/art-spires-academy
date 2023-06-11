@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useClasses from "../../Hooks/useClasses";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -17,12 +17,12 @@ const ClassCard = ({ item }) => {
     const [, refetch] = useClasses();
     const navigate = useNavigate();
     const location = useLocation();
+    const [enrollmentCount, setEnrollmentCount] = useState(enrolled);
 
-
-    const handleAddToCart = item => {
+    const handleAddToClass = item => {
         console.log(item);
         if (user && user.email) {
-            const cartItem = { menuItemId: _id, name, image, price, instructor, seats, email: user.email }
+            const cartItem = { menuItemId: _id, name, image, price, instructor, enrollmentCount,  seats, email: user.email }
             console.log(cartItem)
             fetch('http://localhost:5000/selectclasses', {
                 method: 'POST',
@@ -35,6 +35,7 @@ const ClassCard = ({ item }) => {
                 .then(data => {
                     if (data.insertedId) {
                         refetch(); // refetch cart to update the number of items in the cart
+                        setEnrollmentCount(prevCount => parseFloat(prevCount) + 1);
                         Swal.fire({
                             position: 'top-center',
                             icon: 'success',
@@ -76,13 +77,13 @@ const ClassCard = ({ item }) => {
                     <p className="font-semibold">Teacher :  {instructor}</p>
                     <div className="card-actions gap-5 justify-start">
                         <button className="badge badge-outline"> Seats: {seats}</button>
-                        <button className="badge badge-outline"> Enrolled : {enrolled} </button>
+                        <button className="badge badge-outline"> Enrolled: {enrollmentCount} </button>
                         <button className="badge badge-outline">Pice: {price}</button>
 
                     </div>
 
                     <button
-                        onClick={() => handleAddToCart(item)}
+                        onClick={() => handleAddToClass(item)}
                         className="btn btn-primary btn-outline btn-sm mt-4"
                         disabled={isAdmin || isInstructor || sit == 0}
 
