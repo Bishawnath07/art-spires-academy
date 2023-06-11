@@ -11,9 +11,9 @@ const ClassCard = ({ item }) => {
     const { user } = useContext(AuthContext)
     const [isAdmin] =useAdmin();
     const [isInstructor] =useInstructor();
-    console.log(isAdmin)
-
+    
     const { _id, image, name, instructor, enrolled, seats, price } = item;
+    
     const [, refetch] = useClasses();
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,7 +23,7 @@ const ClassCard = ({ item }) => {
         console.log(item);
         if (user && user.email) {
             const cartItem = { menuItemId: _id, name, image, price, instructor, seats, email: user.email }
-            console.log('console to 21 ', cartItem)
+            console.log( cartItem)
             fetch('http://localhost:5000/selectclasses', {
                 method: 'POST',
                 headers: {
@@ -61,7 +61,7 @@ const ClassCard = ({ item }) => {
         }
     }
     const isEnrollButtonDisabled = user && (user.role === "admin" || user.role === "instructor");
-
+    const sit = seats;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={image} alt="instuctor" /></figure>
@@ -80,7 +80,7 @@ const ClassCard = ({ item }) => {
                 <button
                     onClick={() => handleAddToCart(item)}
                     className="btn btn-primary btn-outline btn-sm mt-4"
-                    disabled={isAdmin || isInstructor }
+                    disabled={isAdmin || isInstructor || sit == 0}
                    
                 >
                     {isEnrollButtonDisabled ? "Button Disabled" : "Enroll Now"}
