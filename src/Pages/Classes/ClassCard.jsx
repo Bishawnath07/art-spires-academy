@@ -9,11 +9,11 @@ import useInstructor from "../../Hooks/useInstructor";
 
 const ClassCard = ({ item }) => {
     const { user } = useContext(AuthContext)
-    const [isAdmin] =useAdmin();
-    const [isInstructor] =useInstructor();
-    
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+
     const { _id, image, name, instructor, enrolled, seats, price } = item;
-    
+
     const [, refetch] = useClasses();
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,7 +23,7 @@ const ClassCard = ({ item }) => {
         console.log(item);
         if (user && user.email) {
             const cartItem = { menuItemId: _id, name, image, price, instructor, seats, email: user.email }
-            console.log( cartItem)
+            console.log(cartItem)
             fetch('http://localhost:5000/selectclasses', {
                 method: 'POST',
                 headers: {
@@ -62,29 +62,34 @@ const ClassCard = ({ item }) => {
     }
     const isEnrollButtonDisabled = user && (user.role === "admin" || user.role === "instructor");
     const sit = seats;
+
+    const cardClassName = `${sit == 0 ? "bg-red-500 card-body" : "card-body" }`;
+
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={image} alt="instuctor" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">
-                    {name} Class
-                </h2>
-                <p className="font-semibold">Teacher :  {instructor}</p>
-                <div className="card-actions gap-5 justify-start">
-                    <button className="badge badge-outline"> Seats: {seats}</button>
-                    <button className="badge badge-outline"> Enrolled : {enrolled} </button>
-                    <button className="badge badge-outline">Pice: {price}</button>
+        <div >
+            <div className="card w-96 bg-base-100 shadow-xl ">
+                <figure><img src={image} alt="instuctor" /></figure>
+                <div className={cardClassName}>
+                    <h2 className="card-title">
+                        {name} Class
+                    </h2>
+                    <p className="font-semibold">Teacher :  {instructor}</p>
+                    <div className="card-actions gap-5 justify-start">
+                        <button className="badge badge-outline"> Seats: {seats}</button>
+                        <button className="badge badge-outline"> Enrolled : {enrolled} </button>
+                        <button className="badge badge-outline">Pice: {price}</button>
 
+                    </div>
+
+                    <button
+                        onClick={() => handleAddToCart(item)}
+                        className="btn btn-primary btn-outline btn-sm mt-4"
+                        disabled={isAdmin || isInstructor || sit == 0}
+
+                    >
+                        {isEnrollButtonDisabled ? "Button Disabled" : "Enroll Now"}
+                    </button>
                 </div>
-
-                <button
-                    onClick={() => handleAddToCart(item)}
-                    className="btn btn-primary btn-outline btn-sm mt-4"
-                    disabled={isAdmin || isInstructor || sit == 0}
-                   
-                >
-                    {isEnrollButtonDisabled ? "Button Disabled" : "Enroll Now"}
-                </button>
             </div>
         </div>
     );
