@@ -8,13 +8,6 @@ const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GETWAY_PK);
 const Payment = () => {
     const classes =useLoaderData();
     console.log(classes)
-    // const [classes, setClasses] = useState([])
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/selectclass')
-    //         .then(res => res.json())
-    //         .then(data => console.log(data))
-    // }, []);
-
     const total = classes.price;
     console.log('total amount' ,total)
     

@@ -5,9 +5,9 @@ import ClassCard from "./ClassCard";
 const Classes = () => {
     const [classes ,setClasses] =useState([])
     useEffect( () =>{
-        fetch('http://localhost:5000/classes')
+        fetch('http://localhost:5000/appreveclasses')
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setClasses(data))
     }, []);
     return (
         <div className="max-w-screen-xl">
