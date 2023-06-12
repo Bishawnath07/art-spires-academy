@@ -2,7 +2,6 @@ import {  FaBookmark,  FaHome, FaRegBookmark,  FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
-import NavBar from "../Shared/NavBer/NavBar";
 
 
 const DashBoard = () => {
@@ -11,7 +10,7 @@ const DashBoard = () => {
 
     return (
         <>
-        <NavBar></NavBar>
+       
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
@@ -87,6 +86,11 @@ const DashBoard = () => {
                             <li>
                                 <NavLink to="/dashboard/enrollclass">
                                     <FaBookmark></FaBookmark> My Enrolled Classes
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/history">
+                                    Payment History
                                 </NavLink>
                             </li>
                            

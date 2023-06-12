@@ -6,7 +6,7 @@ const GetFeedback = () => {
     useEffect(() => {
         fetch('http://localhost:5000/getfeedback')
             .then(res => res.json())
-            .then(data => setFeedbacks(data))
+            .then(data => console.log(data))
     }, [])
     return (
         <div className="w-full">

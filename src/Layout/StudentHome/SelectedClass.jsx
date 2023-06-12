@@ -3,11 +3,13 @@ import Swal from "sweetalert2";
 
 import { AuthContext } from "../../Provider/AuthProvider";
 import SelectedRow from "./SelectedRow";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 
 const SelectedClass = () => {
     const [classes, setClasses] = useState([])
     const {user} = useContext(AuthContext)
+    const [axiosSecure]= useAxiosSecure()
     
     const total = classes.reduce((sum, item) => item.price + sum, 0);
     const url = `http://localhost:5000/selectstudent?email=${user.email}`
@@ -16,6 +18,8 @@ const SelectedClass = () => {
             .then(res => res.json())
             .then(data => setClasses(data))
     }, []);
+
+    
 
     const handleDelete = item => {
         Swal.fire({
@@ -28,12 +32,11 @@ const SelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selectclass/${item._id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
+                axiosSecure.delete(`selectclass/${item._id}`)
+                    
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.deletedCount > 0) {
 
                             Swal.fire(
                                 'Deleted!',
@@ -47,6 +50,7 @@ const SelectedClass = () => {
             }
         })
     }
+
 
     return (
         <div className="overflow-x-auto">

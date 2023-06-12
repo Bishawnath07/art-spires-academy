@@ -19,6 +19,7 @@ import InstructorRoute from "./InstructorRoute";
 import MyClass from "../Pages/DashBoard/InstructorDashboard/MyClass";
 import FeedBack from "../Pages/DashBoard/AdminDashboard/FeedBack";
 import GetFeedback from "../Pages/DashBoard/InstructorDashboard/GetFeedback";
+import PaymentHistory from "../Pages/DashBoard/StudentDashboard/PaymentHistory";
 
 
 
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/feedback/:id' ,
           element: <FeedBack></FeedBack>,
-          loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/appreveclasses/${params.id}`)
         },
         //  instructor relatate route
         {
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
           path: 'selectclass' ,
           element: <SelectedClass></SelectedClass> ,
           
+        },
+        {
+          path: 'history',
+          element: <PaymentHistory></PaymentHistory>
         },
         {
           path: '/dashboard/payment/:id' ,

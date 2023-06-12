@@ -4,12 +4,11 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-
 const ManageClassCard = ({ item }) => {
     const { _id , name, image, price , instructor , seats , enrolled} = item;
     const { user } = useContext(AuthContext)
     const [isButtonDisabled, setIsButtonDisabled] = useState(false)
-
+    
     useEffect(() => {
         const storedDisabledState = localStorage.getItem(`isButtonDisabled_${item._id}`);
         if (storedDisabledState) {
@@ -52,13 +51,9 @@ const ManageClassCard = ({ item }) => {
     const deniedClass = item => {
         console.log(item);
         if (user && user.email) {
-            const cartItem = { name, image, instructor , seats ,enrolled, status:'denied' ,  price, email: user.email }
-            fetch('http://localhost:5000/approveclasses', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(cartItem)
+            fetch('http://localhost:5000/selectclass', {
+                method: 'DELETE',
+                
             })
                 .then(res => res.json())
                 .then(data => {
@@ -67,7 +62,7 @@ const ManageClassCard = ({ item }) => {
                         Swal.fire({
                             position: 'top-center',
                             icon: 'success',
-                            title: ' Added Class on the Class Page.',
+                            title: '  You Denied Class Successfully!.',
                             showConfirmButton: false,
                             timer: 1500
                         })
