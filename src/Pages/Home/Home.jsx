@@ -1,14 +1,14 @@
-import AttractiveSection from "./AttractiveSection/AttractiveSection";
 import CarouselComponent from "./Banner/CarouselComponent";
+import LatestBlog from "./LatestBlog/LatestBlog";
 import PopularClass from "./PopularClass/PopularClass";
 
 const Home = () => {
     return (
-        <div className="max-w-screen-xl">
+        <div className="max-w-6xl mx-auto">
             
             <CarouselComponent></CarouselComponent>
             <PopularClass></PopularClass>
-            <AttractiveSection></AttractiveSection>
+            <LatestBlog></LatestBlog>
         </div>
     );
 };
