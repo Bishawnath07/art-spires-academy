@@ -6,7 +6,7 @@ const PaymentHistory = () => {
     const {user} = useContext(AuthContext);
     const [enrollClass , setEnrollClass] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/succefulpay?email=${user?.email}`)
+        fetch(`https://art-spires-academy-server-bishawnath07.vercel.app/succefulpay?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setEnrollClass(data))
     }, []);

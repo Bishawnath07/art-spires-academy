@@ -12,7 +12,7 @@ const SelectedClass = () => {
     const [axiosSecure]= useAxiosSecure()
     
     const total = classes.reduce((sum, item) => item.price + sum, 0);
-    const url = `http://localhost:5000/selectstudent?email=${user.email}`
+    const url = `https://art-spires-academy-server-bishawnath07.vercel.app/selectstudent?email=${user.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
