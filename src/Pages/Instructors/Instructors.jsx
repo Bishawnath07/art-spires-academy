@@ -13,10 +13,10 @@ const Instructors = () => {
     return (
         <>
         <SectionTitle
-                subHeading={"OUR TEACHERS"}
-                heading={"Meet Our Teachers"}
+                subHeading={"OUR INSTRUCTOR"}
+                heading={"Meet Our Instructor"}
             ></SectionTitle>
-        <div className="grid md:grid-cols-3  gap-5">
+        <div className="grid md:grid-cols-3  gap-10">
             {
                 instructors.map(instructorDetails=> <InstructorsCard
                     key={instructorDetails._id}
