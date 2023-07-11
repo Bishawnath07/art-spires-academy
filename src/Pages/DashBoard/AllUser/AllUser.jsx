@@ -11,7 +11,7 @@ const AllUser = () => {
     })
 
     const handleMakeAdmin = user =>{
-        fetch(`https://art-spires-academy-server-bishawnath07.vercel.app/users/admin/${user._id}`,{
+        fetch(`http://localhost:5000/users/admin/${user._id}`,{
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -31,7 +31,7 @@ const AllUser = () => {
         
     }
     const handleMakeInstructor = user =>{
-        fetch(`https://art-spires-academy-server-bishawnath07.vercel.app/users/instructor/${user._id}`,{
+        fetch(`http://localhost:5000/users/instructor/${user._id}`,{
             method: 'PATCH'
         })
             .then(res => res.json())

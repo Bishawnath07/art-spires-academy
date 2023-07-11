@@ -1,5 +1,5 @@
-import {  useContext} from 'react';
-import { Link, useLocation, useNavigate,  } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
 import SocialLogin from '../Shared/NavBer/SocialLogIn/SocialLogIn';
@@ -10,6 +10,13 @@ const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+  
+    const handleToggleVisibility = () => {
+      setShowPassword(!showPassword);
+    };
 
     const from = location.state?.from?.pathname || "/";
 
@@ -37,16 +44,16 @@ const Login = () => {
             })
     }
 
-   
+
 
     return (
         <>
-           
+
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col gap-28 md:flex-row-reverse">
-               
+
                     <div className="text-center md:w-1/2 lg:text-left">
-                    <h2 className='text-4xl font-bold mb-8'>Please Login</h2>
+                        <h2 className='text-4xl font-bold mb-8'>Please Login</h2>
                         <img src={img} alt="" />
                     </div>
                     <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
@@ -61,12 +68,14 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
+                                <input type={showPassword ? 'text' : 'password'} name="password"  value={password} placeholder="password" onChange={(e) => setPassword(e.target.value)} className="input input-bordered" />
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <button onClick={handleToggleVisibility}>
+                                        {showPassword ? 'Hide Password' : 'Show Password'}
+                                    </button>
                                 </label>
                             </div>
-                            
+
                             {/* todo btn disable for captcha */}
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />

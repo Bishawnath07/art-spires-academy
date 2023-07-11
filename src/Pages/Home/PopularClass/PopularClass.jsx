@@ -1,22 +1,28 @@
+import { useEffect, useState } from "react";
 import SectionTitle from "../../../Components/SectionTitle";
+import PopularClassCard from "./PopularClassCard";
 
 const PopularClass = () => {
+    const [popularClass, setPopularClass] = useState([])
+    useEffect(() => {
+      fetch('http://localhost:5000/classes')
+        .then(res => res.json())
+        .then(data => setPopularClass(data))
+    }, []);
     return (
         <div>
             <SectionTitle
                 subHeading={"POPULAR CLASSES"}
                 heading={"Classes for Your Kids"}
             ></SectionTitle>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+          <div className="grid grid-cols-1 mx-10 md:mx-0  md:grid-cols-3 gap-10">
+          {
+            popularClass.map(pclass => <PopularClassCard
+            key={pclass._id}
+            pclass={pclass}
+            ></PopularClassCard>)
+           }
+          </div>
         </div>
     );
 };

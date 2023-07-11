@@ -13,7 +13,7 @@ const LatestBlog = () => {
                 heading={'Latest Articles From Blog'}
             ></SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
-                <div className="card card-compact w-84 bg-base-100 shadow-xl">
+                <div className="card card-compact mx-10  md:mx-0 bg-base-100 shadow-xl">
                     <figure>
                         <Zoom delay={2000}  duration={2000}><img src={img1} alt="Shoes" /></Zoom>
                     </figure>
@@ -24,7 +24,7 @@ const LatestBlog = () => {
                             <button className="btn btn-primary my-4 btn-sm">Read More</button>
                         </div>
                     </div>
-                </div><div className="card card-compact w-84 bg-base-100 shadow-xl">
+                </div><div className="card card-compact mx-10  md:mx-0 bg-base-100 shadow-xl">
                     <figure> <Zoom delay={2000}  duration={2000}><img src={img2} alt="Shoes" /></Zoom></figure>
                     <div className="card-body">
                         <h2 className="card-title">Katherine Davis Author!</h2>
@@ -33,7 +33,7 @@ const LatestBlog = () => {
                             <button className="btn btn-primary my-4 btn-sm">Read More</button>
                         </div>
                     </div>
-                </div><div className="card card-compact w-84 bg-base-100 shadow-xl">
+                </div><div className="card card-compact mx-10  md:mx-0 bg-base-100 shadow-xl">
                     <figure> <Zoom delay={2000}  duration={2000}><img src={img3} alt="Shoes" /></Zoom></figure>
                     <div className="card-body">
                         <h2 className="card-title">amet eos diam!</h2>

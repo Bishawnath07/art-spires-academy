@@ -5,7 +5,7 @@ import ClassCard from "./ClassCard";
 const Classes = () => {
     const [classes ,setClasses] =useState([])
     useEffect( () =>{
-        fetch('https://art-spires-academy-server-bishawnath07.vercel.app/appreveclasses')
+        fetch('http://localhost:5000/appreveclasses')
         .then(res => res.json())
         .then(data => setClasses(data))
     }, []);

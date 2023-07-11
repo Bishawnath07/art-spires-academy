@@ -1,39 +1,45 @@
  [
     {
       
-      "image": "https://i.ibb.co/QkHtvVQ/team-1.jpg",
-      "name": "John Smith",
-      "email": "john.smith@example.com"
+      "image": "https://i.ibb.co/dcbTmN0/348589565-2424994004327680-7084974514896695654-n.jpg",
+      "name":" Proshanto",
+      "enroll":50,
+      "email": "proshanto@gmail.com"
     },
     {
      
-      "image": "https://i.ibb.co/R2yYwPB/team-2.jpg",
-      "name": "Jane Doe",
-      "email": "jane.doe@example.com"
-    },
-    {
-     
-      "image": "https://i.ibb.co/qyjq8pc/team-3.jpg",
-      "name": "Alex Johnson",
-      "email": "alex.johnson@example.com"
-    },
-    {
-      
       "image": "https://i.ibb.co/gzm6Zy2/team-4.jpg",
-      "name": "Emily Brown",
-      "email": "emily.brown@example.com"
+      "name": "Sayed Ahmed",
+      "enroll":26,
+      "email": "sayedahmed@gmail.com"
+    },
+    {
+     
+      "image": "https://i.ibb.co/L5h6N3x/Rakesh-Poddar.jpg",
+      "name": "Rajes Ahmed",
+      "enroll":20,
+      "email": "rajes@gmail.com"
     },
     {
       
-      "image": "https://i.ibb.co/qyjq8pc/team-3.jpg",
-      "name": "Michael Wilson",
-      "email": "michael.wilson@example.com"
+      "image": "https://i.ibb.co/GMSY9Wn/images.jpg",
+      "name": "Andrila",
+      "enroll":6,
+      "email": "andrila@gmail.com"
+    },
+    {
+      
+      "image": "https://i.ibb.co/ThSGz27/depositphotos.webp",
+      "name": "Sufiya Akhter",
+      "enroll":5,
+      "email": "sufiya@gmail.com"
     },
     {
     
-      "image": "https://i.ibb.co/QkHtvVQ/team-1.jpg",
-      "name": "Sophia Lee",
-      "email": "sophia.lee@example.com"
+      "image": "https://i.ibb.co/R2yYwPB/team-2.jpg",
+      "name": "Dalim",
+      "enroll":45,
+      "email": "dalim@gmail.com"
     }
   ]
 

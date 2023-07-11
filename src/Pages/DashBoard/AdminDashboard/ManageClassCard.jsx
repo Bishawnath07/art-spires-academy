@@ -20,7 +20,7 @@ const ManageClassCard = ({ item }) => {
         console.log(item);
         if (user && user.email) {
             const cartItem = { name, image, instructor , seats ,enrolled, status:'approve' ,  price, email: user.email }
-            fetch('https://art-spires-academy-server-bishawnath07.vercel.app/approveclasses', {
+            fetch('http://localhost:5000/approveclasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -51,7 +51,7 @@ const ManageClassCard = ({ item }) => {
     const deniedClass = item => {
         console.log(item);
         if (user && user.email) {
-            fetch('https://art-spires-academy-server-bishawnath07.vercel.app/selectclass', {
+            fetch('http://localhost:5000/selectclass', {
                 method: 'DELETE',
                 
             })
@@ -94,7 +94,7 @@ const ManageClassCard = ({ item }) => {
             <td>{item.email}</td>
             <td>{item.seats}</td>
             <td>{item.price}</td>
-            <td>{item.status}</td>
+            <td>{isButtonDisabled && "approved" ||  item.status}</td>
             <th className="space-y-2 flex flex-col">
                 <button onClick={() => approveClass(item)} className="btn btn-primary btn-xs" disabled={isButtonDisabled}>approved</button>
                 <button onClick={() => deniedClass(item)} className="btn btn-warning btn-xs" disabled={isButtonDisabled}>denied</button>

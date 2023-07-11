@@ -4,7 +4,7 @@ import SectionTitle from "../../../Components/SectionTitle";
 const MyClass = () => {
     const [myclass, setMyclass] = useState([])
     useEffect(() => {
-        fetch('https://art-spires-academy-server-bishawnath07.vercel.app/appreveclasses')
+        fetch('http://localhost:5000/appreveclasses')
             .then(res => res.json())
             .then(data => setMyclass(data))
     }, []);

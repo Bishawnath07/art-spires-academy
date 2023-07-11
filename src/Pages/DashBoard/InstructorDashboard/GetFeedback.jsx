@@ -4,9 +4,9 @@ import SectionTitle from "../../../Components/SectionTitle";
 const GetFeedback = () => {
     const [feedbacks, setFeedbacks] = useState([])
     useEffect(() => {
-        fetch('https://art-spires-academy-server-bishawnath07.vercel.app/getfeedback')
+        fetch('http://localhost:5000/getfeedback')
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setFeedbacks(data))
     }, [])
     return (
         <div className="w-full">
@@ -18,16 +18,16 @@ const GetFeedback = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="bg-black text-white text-xl bg-opacity-60">
 
                             <th>Image</th>
-                            <th>Instructor</th>
+                            <th>Name</th>
+                            <th>Email</th>
                             <th>Class</th>
-                            <th>Status</th>
                             <th>Feedback Message</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="bg-black bg-opacity-50 text-white">
                         {
                             feedbacks.map(feedback => <tr key={feedback._id}>
 
@@ -45,10 +45,8 @@ const GetFeedback = () => {
                                     {feedback.instructor}
 
                                 </td>
+                                <td>{feedback.email}</td>
                                 <td>{feedback.name} </td>
-                                <th>
-                                    <button className="btn btn-ghost btn-xs">{feedback.status}</button>
-                                </th>
                                 <td>{feedback.feedback}</td>
                             </tr>)
                         }

@@ -68,7 +68,7 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/feedback/:id' ,
           element: <FeedBack></FeedBack>,
-          loader: ({params}) => fetch(`https://art-spires-academy-server-bishawnath07.vercel.app/appreveclasses/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
         },
         //  instructor relatate route
         {
@@ -77,11 +77,11 @@ const router = createBrowserRouter([
         },
         {
           path: 'myclass' ,
-          element: <MyClass></MyClass>
+          element: <InstructorRoute> <MyClass></MyClass></InstructorRoute>
         },
         {
           path:'getfeedback' ,
-          element: <GetFeedback></GetFeedback>
+          element: <InstructorRoute><GetFeedback></GetFeedback></InstructorRoute>
         },
 
         // student relatate route
@@ -101,7 +101,7 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/payment/:id' ,
           element: <Payment></Payment> ,
-          loader: ({params}) => fetch(`https://art-spires-academy-server-bishawnath07.vercel.app/selectclass/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/selectclass/${params.id}`)
         }
         
       ]

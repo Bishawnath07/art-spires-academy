@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="footer px-10 py-4 border-t  text-base-content border-base-300">
         <div className="items-center grid-flow-col">
         <img className='h-28 w-28' src={img} alt="" />
-          <p>Bangladesh IPC Chronic Toys Insecurity <br/>Providing reliable tech since 1992</p>
+          <p>Bangladesh IPC Chronic  Insecurity <br/>Providing reliable tech since 1992</p>
         </div> 
         <div className="md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4">
