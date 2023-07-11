@@ -1,6 +1,7 @@
+import { FaArrowRight } from "react-icons/fa";
 
 const PopularClassCard = ({ pclass }) => {
-    const {  image, name } = pclass;
+    const { image, name , price} = pclass;
 
     return (
         //     <div className="card bg-base-100 shadow-xl ">
@@ -22,8 +23,12 @@ const PopularClassCard = ({ pclass }) => {
         <div className='overflow-hidden relative transition duration-500 transform hover:-translate-y-2 rounded-lg shadow-lg hover:shadow-2xl'>
             <img src={image} alt="book cover" className='object-cover w-full h-56 md:h-64 xl:h-80' />
             <div className='bg-black bg-opacity-80 px-6 py-4 text-gray-300 absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 '>
-                <p className="text-2xl font-semibold">{name} Class</p>
-                
+                <div className="mt-10">
+                    <h2 className="text-2xl font-semibold  text-amber-400">{name} Class</h2>
+                    <p className="text-xl absolute top-5 right-5 btn btn-circle btn-info font-semibold text-teal-50">{price}৳</p>
+                    <p className="font-semibold my-3">Here are some tips on how you can use neutral tones to create and edit your images with a more realistic look</p>
+                    <button className="flex flex-row items-center gap-7"><span className="text-xl font-bold text-amber-400">Learn More</span > <FaArrowRight  className=" text-amber-400"></FaArrowRight> </button>
+                </div>
             </div>
 
         </div>
