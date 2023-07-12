@@ -20,7 +20,7 @@ const ManageClassCard = ({ item }) => {
         console.log(item);
         if (user && user.email) {
             const cartItem = { name, image, instructor , seats ,enrolled, status:'approve' ,  price, email: user.email }
-            fetch('http://localhost:5000/approveclasses', {
+            fetch('https://art-spires-academy-server-bishawnath07.vercel.app/approveclasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -51,7 +51,7 @@ const ManageClassCard = ({ item }) => {
     const deniedClass = item => {
         console.log(item);
         if (user && user.email) {
-            fetch('http://localhost:5000/selectclass', {
+            fetch('https://art-spires-academy-server-bishawnath07.vercel.app/selectclass', {
                 method: 'DELETE',
                 
             })

@@ -24,7 +24,7 @@ const ClassCard = ({ item }) => {
         if (user && user.email) {
             const cartItem = { menuItemId: _id, name, image, price, instructor, enrollmentCount,  seats, email: user.email }
             console.log(cartItem)
-            fetch('http://localhost:5000/selectclasses', {
+            fetch('https://art-spires-academy-server-bishawnath07.vercel.app/selectclasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

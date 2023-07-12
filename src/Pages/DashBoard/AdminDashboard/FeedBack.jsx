@@ -18,7 +18,7 @@ const FeedBack = () => {
             const cartItem = { feedback ,name , instructor , email , image }
             console.log(cartItem)
             
-            fetch('http://localhost:5000/feedback', {
+            fetch('https://art-spires-academy-server-bishawnath07.vercel.app/feedback', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

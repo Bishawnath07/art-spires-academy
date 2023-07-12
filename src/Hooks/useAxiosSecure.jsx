@@ -6,7 +6,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 // https://art-spires-academy-server-bishawnath07.vercel.app
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000', 
+  baseURL: 'https://art-spires-academy-server-bishawnath07.vercel.app', 
 });
 
 const useAxiosSecure = () => {

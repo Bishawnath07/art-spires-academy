@@ -4,7 +4,7 @@ import SectionTitle from "../../../Components/SectionTitle";
 const GetFeedback = () => {
     const [feedbacks, setFeedbacks] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/getfeedback')
+        fetch('https://art-spires-academy-server-bishawnath07.vercel.app/getfeedback')
             .then(res => res.json())
             .then(data => setFeedbacks(data))
     }, [])

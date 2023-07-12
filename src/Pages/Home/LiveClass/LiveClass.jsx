@@ -2,7 +2,7 @@ import CountdownTimer from "./CountdownTimer";
 
 const LiveClass = () => {
     return (
-        <div>
+        <div className="mt-20">
             <h2 className="text-4xl font-bold my-10 text-center">Join Our Live Class</h2>
            <div className="bg-red-50 text-black text-center p-10">
             <h3 className="text-2xl font-semibold mb-5">Meeting starts in:</h3>
