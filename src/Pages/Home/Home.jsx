@@ -4,6 +4,7 @@ import CarouselComponent from "./Banner/CarouselComponent";
 import FeaturedCourses from "./FeaturedCourses/FeaturedCourses";
 
 import LatestBlog from "./LatestBlog/LatestBlog";
+import LiveClass from "./LiveClass/LiveClass";
 import PopularClass from "./PopularClass/PopularClass";
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <FeaturedCourses></FeaturedCourses>
             <PopularClass></PopularClass>
             <Instructors></Instructors>
+            <LiveClass></LiveClass>
             <LatestBlog></LatestBlog>
         </div>
            </>
