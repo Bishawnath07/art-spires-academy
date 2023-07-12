@@ -5,7 +5,7 @@ import img1 from './image/Edu-School-Website-Template-1-scaled.jpg'
 
 const CarouselComponent = () => {
   return (
-    <Carousel autoPlay infiniteLoop className='text-center '>
+    <Carousel autoPlay infiniteLoop className='text-center  '>
       <div>
         <img src={img} alt="Image 1" />
         <p className="legend">Image 1</p>

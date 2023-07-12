@@ -13,7 +13,7 @@ const PopularClass = () => {
         <div>
             <SectionTitle
                 subHeading={"POPULAR CLASSES"}
-                heading={"Classes for Your Kids"}
+                heading={"Available Classes for Your Kids"}
             ></SectionTitle>
           <div className="grid grid-cols-1 mx-10 md:mx-0  md:grid-cols-3 gap-10">
           {
