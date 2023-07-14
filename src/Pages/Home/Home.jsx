@@ -1,6 +1,7 @@
 import Instructors from "../Instructors/Instructors";
 import AllCourse from "./AllCourse/AllCourse";
 import CarouselComponent from "./Banner/CarouselComponent";
+// import FeaturedBlog from "./FeaturedBlog/FeaturedBlog";
 import FeaturedCourses from "./FeaturedCourses/FeaturedCourses";
 
 import LatestBlog from "./LatestBlog/LatestBlog";
@@ -18,6 +19,8 @@ const Home = () => {
             <Instructors></Instructors>
             <LiveClass></LiveClass>
             <LatestBlog></LatestBlog>
+            {/* <FeaturedBlog></FeaturedBlog> */}
+
         </div>
            </>
     );
