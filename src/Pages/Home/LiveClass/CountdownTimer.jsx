@@ -33,25 +33,25 @@ function CountdownTimer() {
     <div className="flex flex-col items-center justify-center">
       <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
         <div className="flex flex-col bg-neutral rounded-box text-neutral-content p-3">
-          <span className="countdown font-mono text-5xl">
+          <span className="countdown font-mono text-[34px] md:text-5xl">
             <span style={{ '--value': days }}>{days}</span>
           </span>
           days
         </div>
         <div className="flex flex-col bg-neutral rounded-box text-neutral-content p-3">
-          <span className="countdown font-mono text-5xl">
+          <span className="countdown font-mono text-[34px] md:text-5xl">
             <span style={{ '--value': hours }}>{hours}</span>
           </span>
           hours
         </div>
         <div className="flex flex-col bg-neutral rounded-box text-neutral-content p-3">
-          <span className="countdown font-mono text-5xl">
+          <span className="countdown font-mono text-[34px] md:text-5xl">
             <span style={{ '--value': minutes }}>{minutes}</span>
           </span>
           min
         </div>
         <div className="flex flex-col bg-neutral rounded-box text-neutral-content p-3">
-          <span className="countdown font-mono text-5xl">
+          <span className="countdown font-mono text-[34px] md:text-5xl">
             <span style={{ '--value': seconds }}>{seconds}</span>
           </span>
           sec

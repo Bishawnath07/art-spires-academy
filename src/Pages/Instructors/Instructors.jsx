@@ -11,13 +11,13 @@ const Instructors = () => {
         .then(data => setInstructors(data))
     }, []);
     return (
-       <div className="mt-20">
+       <div className="mt-20 mx-4">
          
         <SectionTitle
                 subHeading={"OUR INSTRUCTOR"}
                 heading={"Meet Our Instructor"}
             ></SectionTitle>
-        <div className="grid md:grid-cols-4 md:mx-0 mx-10 mt-10 gap-10">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 md:mx-0 mx-10 mt-10 gap-10">
             {
                 instructors.map(instructorDetails=> <InstructorsCard
                     key={instructorDetails._id}

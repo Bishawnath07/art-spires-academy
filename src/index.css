@@ -16,3 +16,11 @@
   body{
     font-family: 'Lunasima', sans-serif;
   }
+  /* Define a media query for screens between 360px and 420px */
+@media screen and (max-width: 420px) and (min-width: 360px) {
+  /* Select the slick arrow buttons by class name and hide them */
+  .slick-arrow,
+  .slick-next {
+    display: none;
+  }
+}

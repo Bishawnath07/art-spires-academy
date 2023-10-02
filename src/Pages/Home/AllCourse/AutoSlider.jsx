@@ -8,7 +8,7 @@ import img4 from './image/icon-4.png'
 import img5 from './image/icon-5.png'
 import img6 from './image/icon-6.png'
 
-const AutoSlider = () => {
+const  AutoSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -17,33 +17,34 @@ const AutoSlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    
   };
 
   return (
-    <Slider {...settings}>
+    <Slider className='max-w-[18rem] md:max-w-6xl mx-auto' {...settings}>
       <div className="text-center">
         <img className=" mx-auto" src={img1} alt="" />
-        <h3 className="font-semibold my-4">art and humanities</h3>
+        <h3 className="font-semibold text-[10px] md:text-[18px] my-4">art and humanities</h3>
       </div>
       <div className="text-center">
       <img className=" mx-auto" src={img2} alt="" />
-        <h3 className="font-semibold my-4">Business</h3>
+        <h3 className="font-semibold text-[10px] md:text-[18px] my-4">Business</h3>
       </div>
       <div className="text-center">
       <img className=" mx-auto" src={img3} alt="" />
-        <h3 className="font-semibold my-4">Computer Science</h3>
+        <h3 className="font-semibold text-[10px] md:text-[18px] my-4">Computer Science</h3>
       </div>
       <div className="text-center">
         <img className=" mx-auto" src={img4} alt="" />
-        <h3 className="font-semibold my-4"> Data Science</h3>
+        <h3 className="font-semibold text-[10px] md:text-[18px] my-4"> Data Science</h3>
       </div>
       <div className="text-center">
       <img className=" mx-auto" src={img5} alt="" />
-        <h3 className="font-semibold my-4">Math Logic</h3>
+        <h3 className="font-semibold text-[10px] md:text-[18px] my-4">Math Logic</h3>
       </div>
       <div className="text-center">
       <img className=" mx-auto" src={img6} alt="" />
-        <h3 className="font-semibold my-4">Language Learing</h3>
+        <h3 className="font-semibold text-[10px] md:text-[18px] my-4">Language Learing</h3>
       </div>
     </Slider>
   );

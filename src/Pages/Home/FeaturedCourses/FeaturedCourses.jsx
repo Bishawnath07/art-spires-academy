@@ -14,30 +14,30 @@ const FeaturedCourses = () => {
                 heading={"Classes for Your Kids"}
             ></SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-black">
-                <div className="card card-compact bg- bg-cyan-500  shadow-xl">
+                <div className="card card-compact mx-4 md:mx-0 bg- bg-cyan-500  shadow-xl">
                     <figure><img className="hover:scale-125 transform transition-all duration-300" src={img1} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">Software Development</h2>
                         <hr />
                         <div className="flex justify-between font-semibold">
-                        <p>Instructor: Adam Smith</p>
-                        <p>$120.00</p>
+                        <p className='text-[12px] md:text-[14px]'> Instructor: Adam Smith</p>
+                        <p className='text-[12px] md:text-[14px]'>$120.00</p>
                         </div>
                        
                     </div>
                 </div>
-                <div className="card card-compact  bg-cyan-500  shadow-xl">
+                <div className="card card-compact mx-4 md:mx-0  bg-cyan-500  shadow-xl">
                     <figure><img className="hover:scale-125 transform transition-all duration-300" src={img2} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">Business Essentials</h2>
                         <hr />
                         <div className="flex justify-between font-semibold">
-                        <p>Instructor: Adam Smith</p>
-                        <p>$120.00</p>
+                        <p className='text-[12px] md:text-[14px]'>Instructor: Adam Smith</p>
+                        <p className='text-[12px] md:text-[14px]'>$120.00</p>
                         </div>
                        
                     </div>
-                </div><div className="card card-compact  bg-cyan-500  shadow-xl">
+                </div><div className="card card-compact mx-4 md:mx-0  bg-cyan-500  shadow-xl">
                     <figure><img className="hover:scale-125 transform transition-all duration-300" src={img3} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">History & Philosophy</h2>
@@ -48,7 +48,7 @@ const FeaturedCourses = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-compact  bg-cyan-500  shadow-xl">
+                <div className="card card-compact mx-4 md:mx-0  bg-cyan-500  shadow-xl">
                     <figure><img className="hover:scale-125 transform transition-all duration-300" src={img4} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">Algebra & Calculus</h2>
@@ -58,24 +58,24 @@ const FeaturedCourses = () => {
                         <p>$115.00</p>
                         </div>
                     </div>
-                </div><div className="card card-compact  bg-cyan-500  shadow-xl">
+                </div><div className="card card-compact mx-4 md:mx-0  bg-cyan-500  shadow-xl">
                     <figure><img className="hover:scale-125 transform transition-all duration-300" src={img5} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">English Learning</h2>
                         <hr />
                         <div className="flex justify-between font-semibold">
-                        <p>Instructor: John Doe</p>
-                        <p>Free</p>
+                        <p className='text-[12px] md:text-[14px]'>Instructor: John Doe</p>
+                        <p className='text-[12px] md:text-[14px]'>Free</p>
                         </div>
                     </div>
-                </div><div className="card card-compact  bg-cyan-500  shadow-xl">
+                </div><div className="card card-compact mx-4 md:mx-0  bg-cyan-500  shadow-xl">
                     <figure><img className="hover:scale-125 transform transition-all duration-300" src={img6} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">Business Strategy</h2>
                         <hr />
                         <div className="flex justify-between font-semibold">
-                        <p>Instructor: John Doe</p>
-                        <p>Free</p>
+                        <p className='text-[12px] md:text-[14px]'>Instructor: John Doe</p>
+                        <p className='text-[12px] md:text-[14px]'>Free</p>
                         </div>
                     </div>
                 </div>
